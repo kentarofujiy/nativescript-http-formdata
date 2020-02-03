@@ -10,7 +10,7 @@ export class TNSHttpFormData extends Common
         super();
     }
 
-    post(url: string, params: Array<TNSHttpFormDataParam>, options?: TNSHttpFormDataRequestOptions)
+    put(url: string, params: Array<TNSHttpFormDataParam>, options?: TNSHttpFormDataRequestOptions)
         : Promise<TNSHttpFormDataResponse> {
         return new Promise((resolve, reject) => {
             try {
@@ -36,7 +36,7 @@ export class TNSHttpFormData extends Common
                     }
                 }
                 const request = reqWithURL
-                    .post(requestBody)
+                    .put(requestBody)
                     .build();
                 let callback = new okhttp3.Callback({
                     // all server errors will arrive here
